@@ -18,10 +18,10 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 dependencies = [
-    "numpy==1.18.1",
-    "scipy==1.4.1",
+    "numpy>=2.0.0",
+    "scipy>=1.14.0",
 ]
 
 [project.optional-dependencies]
@@ -40,8 +40,8 @@ burst = [
     "tabulate",
 ]
 dev = [
-    "pytest==6.0.1",
-    "tqdm==4.64.0",
+    "pytest>=7.0.0",
+    "tqdm>=4.64.0",
 ]
 all = [
     "trackeval[plot,segmentation,jf,burst,dev]",
