@@ -1,6 +1,55 @@
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
+requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "trackeval"
+version = "1.0.dev1"
+description = "Code for evaluating object tracking"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Jonathon Luiten, Arne Hoffhues", email = "jonoluiten@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0.0",
+    "scipy>=1.14.0",
+]
+
+[project.optional-dependencies]
+plot = [
+    "matplotlib==3.2.1",
+]
+segmentation = [
+    "pycocotools==2.0.2",
+    "Pillow==8.1.2",
+]
+jf = [
+    "opencv-python==4.4.0.46",
+    "scikit-image==0.16.2",
+]
+burst = [
+    "tabulate",
+]
+dev = [
+    "pytest>=7.0.0",
+    "tqdm>=4.64.0",
+]
+all = [
+    "trackeval[plot,segmentation,jf,burst,dev]",
+]
+
+[project.urls]
+Homepage = "https://github.com/JonathonLuiten/TrackEval"
+"Bug Tracker" = "https://github.com/JonathonLuiten/TrackEval/issues"
+
+[tool.setuptools.packages.find]
+include = ["trackeval*"]

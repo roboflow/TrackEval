@@ -1,5 +1,7 @@
 .idea
 .vscode
+.venv/
+*.egg-info/
 **.pyc
 **__pycache__
 gt_data/*
