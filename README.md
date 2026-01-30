@@ -118,19 +118,38 @@ To convert formats, check out the format specifications defined [here](docs).
 
 By default, we would recommend the MOTChallenge format, although any implemented format should work. Note that for many cases you will want to use the argument ```--DO_PREPROC False``` unless you want to run preprocessing to remove distractor objects.
 
-## Requirements
- Code tested on Python 3.7.
- 
- - Minimum requirements: numpy, scipy
- - For plotting: matplotlib
- - For segmentation datasets (KITTI MOTS, MOTS-Challenge, DAVIS, YouTube-VIS): pycocotools
- - For DAVIS dataset: Pillow
- - For J & F metric: opencv_python, scikit_image
- - For simples test-cases for metrics: pytest
+## Installation
 
-use ```pip3 -r install requirements.txt``` to install all possible requirements.
+Code tested on Python 3.7.
 
-use ```pip3 -r install minimum_requirments.txt``` to only install the minimum if you don't need the extra functionality as listed above.
+### Using uv (recommended)
+
+```bash
+# Install with minimum dependencies (numpy, scipy)
+uv pip install trackeval
+
+# Install with all dependencies
+uv pip install "trackeval[all]"
+
+# Install specific extras
+uv pip install "trackeval[plot,segmentation]"
+```
+
+### Using pip
+
+```bash
+pip install trackeval
+pip install "trackeval[all]"
+```
+
+### Available extras
+
+- `plot` - matplotlib for plotting results
+- `segmentation` - pycocotools, Pillow for segmentation datasets (KITTI MOTS, MOTS-Challenge, DAVIS, YouTube-VIS)
+- `jf` - opencv-python, scikit-image for J & F metric
+- `burst` - tabulate for BURST benchmark
+- `dev` - pytest, tqdm for development and testing
+- `all` - all optional dependencies
 
 ## Timing analysis
 
